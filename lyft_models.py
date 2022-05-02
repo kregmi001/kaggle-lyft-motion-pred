@@ -5,12 +5,14 @@ import torch
 import torch.nn as nn
 
 BACKBONE_OUT = {
-    "efficientnet_b0": 1280,
+    
     "efficientnet_b1": 1280,
-    "efficientnet_b3": 1536,
+    "efficientnet_b5": 2048,
     "seresnext26d_32x4d": 2048,
+    "xception41": 2048,
+    "xception71":2048
 }
-ModelTypes = Union[timm.models.efficientnet.EfficientNet, timm.models.resnet.ResNet]
+ModelTypes = Union[timm.models.efficientnet.EfficientNet, timm.models.xception.Xception]
 
 
 def extend_input_channel(model: ModelTypes, channel_scale: int = 2) -> nn.Module:
@@ -93,7 +95,7 @@ def extend_1st_convw_ch(
 
 class LyftMultiModel(nn.Module):
     def __init__(
-        self, cfg: dict, num_modes: int = 3, backbone_name: str = "efficientnet_b1"
+        self, cfg: dict, num_modes: int = 3, backbone_name: str = "efficientnet_b5"
     ) -> None:
         """
         Multi mode prediction net with imagenet pretrained backbone.
