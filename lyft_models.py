@@ -8,10 +8,9 @@ BACKBONE_OUT = {
     
     "efficientnet_b2": 1408,
     "efficientnet_b5": 2048,
-    "xception41": 2048,
-    "xception71":2048,
+    
 }
-ModelTypes = Union[timm.models.efficientnet.EfficientNet, timm.models.xception.Xception]
+ModelTypes = Union[timm.models.efficientnet.EfficientNet, timm.models.resnet.ResNet]
 
 
 def extend_input_channel(model: ModelTypes, channel_scale: int = 2) -> nn.Module:
