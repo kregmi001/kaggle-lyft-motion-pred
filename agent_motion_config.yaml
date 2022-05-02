@@ -56,7 +56,7 @@ val_data_loader:
   num_workers: 4
 
 val_ch_data_loader:
-  key: 'scenes/validate.zarr'
+  key: 'scenes/validate_chopped_100/validate.zarr'
   shuffle: False
   num_workers: 4
 
