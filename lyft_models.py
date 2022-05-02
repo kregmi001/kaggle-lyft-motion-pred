@@ -8,7 +8,6 @@ BACKBONE_OUT = {
     
     "efficientnet_b1": 1280,
     "efficientnet_b5": 2048,
-    "seresnext26d_32x4d": 2048,
     "xception41": 2048,
     "xception71":2048,
 }
