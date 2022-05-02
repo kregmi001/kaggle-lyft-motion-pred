@@ -183,8 +183,8 @@ class LitModel(pl.LightningModule):
         num_modes: int = 3,
         ba_size: int = 64,
         lr: float = 3.0e-4,
-        backbone_name: str = "efficientnet_b1",
-        epochs: int = 1,
+        backbone_name: str = "efficientnet_b5",
+        epochs: int = 2,
         total_steps: int = 100,
         data_size: int = ALL_DATA_SIZE,
         optim_name: str = "adam",
@@ -436,8 +436,8 @@ if __name__ == "__main__":
     parser.add_argument("--epochs", type=int, default=2, help="epochs for training")
     parser.add_argument(
         "--backbone_name",
-        choices=["efficientnet_b1", "seresnext26d_32x4d"],
-        default="seresnext26d_32x4d",
+        choices=["efficientnet_b1", "efficientnet_b5", "xception41", "xception71"],
+        default=["efficientnet_b5", "xception41"],
         help="backbone name",
     )
     parser.add_argument(
