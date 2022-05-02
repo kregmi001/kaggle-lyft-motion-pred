@@ -46,7 +46,7 @@ raster_params:
 ###################
 ## Data loader options
 train_data_loader:
-  key: "scenes/train_full.zarr"
+  key: "scenes/train.zarr"
   shuffle: True
   num_workers: 4
 
