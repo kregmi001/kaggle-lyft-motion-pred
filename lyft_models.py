@@ -94,7 +94,7 @@ def extend_1st_convw_ch(
 
 class LyftMultiModel(nn.Module):
     def __init__(
-        self, cfg: dict, num_modes: int = 3, backbone_name: str = "efficientnet_b1"
+        self, cfg: dict, num_modes: int = 3, backbone_name: str = "efficientnet_b5"
     ) -> None:
         """
         Multi mode prediction net with imagenet pretrained backbone.
@@ -109,7 +109,7 @@ class LyftMultiModel(nn.Module):
             self.backbone, backbone_name, num_in_channels
         )
 
-        # X, Y coords for the future positions (output shape: batch_sizex50x2)
+      
         self.future_len = cfg["model_params"]["future_num_frames"]
         num_targets = 2 * self.future_len
 
