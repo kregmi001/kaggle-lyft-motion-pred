@@ -6,7 +6,7 @@ import torch.nn as nn
 
 BACKBONE_OUT = {
     
-    "efficientnet_b1": 1280,
+    "efficientnet_b2": 1408,
     "efficientnet_b5": 2048,
     "xception41": 2048,
     "xception71":2048,
