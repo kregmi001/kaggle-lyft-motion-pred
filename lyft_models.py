@@ -10,7 +10,7 @@ BACKBONE_OUT = {
     "efficientnet_b5": 2048,
     "seresnext26d_32x4d": 2048,
     "xception41": 2048,
-    "xception71":2048
+    "xception71":2048,
 }
 ModelTypes = Union[timm.models.efficientnet.EfficientNet, timm.models.xception.Xception]
 
