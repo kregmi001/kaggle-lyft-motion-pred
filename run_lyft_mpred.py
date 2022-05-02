@@ -432,8 +432,8 @@ if __name__ == "__main__":
         help="number of the modes on each prediction",
     )
     parser.add_argument("--lr", default=7.0e-4, type=float, help="learning rate")
-    parser.add_argument("--batch_size", type=int, default=220, help="batch size")
-    parser.add_argument("--epochs", type=int, default=1, help="epochs for training")
+    parser.add_argument("--batch_size", type=int, default=64, help="batch size")
+    parser.add_argument("--epochs", type=int, default=2, help="epochs for training")
     parser.add_argument(
         "--backbone_name",
         choices=["efficientnet_b1", "seresnext26d_32x4d"],
