@@ -181,7 +181,7 @@ class LitModel(pl.LightningModule):
         self,
         cfg: dict,
         num_modes: int = 3,
-        ba_size: int = 128,
+        ba_size: int = 64,
         lr: float = 3.0e-4,
         backbone_name: str = "efficientnet_b1",
         epochs: int = 1,
