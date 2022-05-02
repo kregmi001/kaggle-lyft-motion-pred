@@ -34,7 +34,7 @@ CFG_PATH = "./agent_motion_config.yaml"
 # minimum number of frames an agents must have in the past to be picked
 MIN_FRAME_HISTORY = 0
 # minimum number of frames an agents must have in the future to be picked
-MIN_FRAME_FUTURE = 10
+MIN_FRAME_FUTURE = 8
 VAL_SELECTED_FRAME = (99,)
 
 # output path for test mode
@@ -437,7 +437,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--backbone_name",
         choices=["efficientnet_b1", "efficientnet_b5", "xception41", "xception71"],
-        default=["efficientnet_b5", "xception41"],
+        default= "efficientnet_b5",
         help="backbone name",
     )
     parser.add_argument(
