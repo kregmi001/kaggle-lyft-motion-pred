@@ -114,6 +114,21 @@ class LyftMultiModel(nn.Module):
 
         self.num_preds = num_targets * num_modes
         self.num_modes = num_modes
+        
+        self.cnn_layers = Sequential(
+            # Defining a 2D convolution layer
+            Conv2d(3, 16, kernel_size=3, stride=1, padding=1),
+            ReLU(inplace=True),
+            # batch normalization layer
+            BatchNorm2d(16),
+            MaxPool2d(kernel_size=2, stride=2),
+            # Defining another 2D convolution layer
+            Conv2d(16, 32, kernel_size=3, stride=1, padding=1),
+            ReLU(inplace=True),    
+            # batch normalization layer
+            BatchNorm2d(32),
+            MaxPool2d(kernel_size=2, stride=2),
+        )
 
         self.logit = nn.Linear(
             backbone_out_features, out_features=self.num_preds + num_modes
@@ -122,6 +137,7 @@ class LyftMultiModel(nn.Module):
     def forward(self, x):
         feature = self.backbone(x)
         x = self.logit(feature)
+        x = self.cnn_layers(x)
         # pred (batch_size)x(modes)x(time)x(2D coords)
         # confidences (batch_size)x(modes)
         bs, _ = x.shape
