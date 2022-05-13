@@ -47,7 +47,7 @@ class LyftMpredDatamodule(pl.LightningDataModule):
         l5kit_data_folder: str,
         cfg: dict,
         batch_size: int = 64,
-        num_workers: int = 16,
+        num_workers: int = 8,
         downsample_train: bool = False,
         is_test: bool = False,
         is_debug: bool = False,
