@@ -46,7 +46,7 @@ class LyftMpredDatamodule(pl.LightningDataModule):
         self,
         l5kit_data_folder: str,
         cfg: dict,
-        batch_size: int = 440,
+        batch_size: int = 64,
         num_workers: int = 16,
         downsample_train: bool = False,
         is_test: bool = False,
@@ -487,7 +487,7 @@ much faster than using all data, but it will get larger loss",
         cfg["train_data_loader"]["key"] = "scenes/sample.zarr"
         cfg["val_data_loader"]["key"] = "scenes/sample.zarr"
         VAL_INTERVAL_SAMPLES = 5000
-        args.batch_size = 16
+        args.batch_size = 32
     else:
         DEBUG = False
         print("\t ---- NORMAL RUN ---- ")
